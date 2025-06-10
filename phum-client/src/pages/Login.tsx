@@ -1,5 +1,5 @@
 import { Button, Row } from "antd";
-import { useForm, type FieldValues } from "react-hook-form";
+import { type FieldValues } from "react-hook-form";
 import { useLoginMutation } from "../redux/features/auth/authApi";
 import { useAppDispatch } from "../redux/hooks";
 import { setUser, type TUser } from "../redux/features/auth/authSlice";
@@ -18,6 +18,11 @@ const Login = () => {
   //     password: "admin123",
   //   },
   // });
+
+  const defaultValues = {
+    id: "A-0001",
+    password: "admin123",
+  };
 
   const [login] = useLoginMutation();
 
@@ -44,8 +49,8 @@ const Login = () => {
   };
 
   return (
-    <Row justify="center" align="middle" style={{ height: "100vh"}}>
-      <PHForm onSubmit={onSubmit}>
+    <Row justify="center" align="middle" style={{ height: "100vh" }}>
+      <PHForm onSubmit={onSubmit} defaultValues = {defaultValues}>
         <PHInput type="text" name="id" label="Id" />
 
         <PHInput type="text" name="password" label="Password" />
