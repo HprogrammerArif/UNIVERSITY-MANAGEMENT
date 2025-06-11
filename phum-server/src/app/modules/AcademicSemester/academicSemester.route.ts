@@ -17,7 +17,7 @@ router.post(
 );
 
 router.get(
-  '/:courseId',
+  '/:semesterId',
   auth(
     USER_ROLE.superAdmin,
     USER_ROLE.admin,
