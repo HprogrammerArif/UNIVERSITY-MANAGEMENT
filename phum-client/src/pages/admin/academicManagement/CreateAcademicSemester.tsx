@@ -20,6 +20,8 @@ const CreateAcademicSemester = () => {
   const [addAcademicSemester] = useAddAcademicSemesterMutation();
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+    console.log({data});
+    
     const toastId = toast.loading("Loading...");
     const name = semesterOptions[Number(data?.name) - 1]?.label;
 

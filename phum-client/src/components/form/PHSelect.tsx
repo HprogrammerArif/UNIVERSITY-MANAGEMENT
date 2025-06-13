@@ -8,10 +8,13 @@ type PHSelectProps = {
 };
 
 const PHSelect = ({ label, name, options }: PHSelectProps) => {
+
+  console.log({ label, name, options });
+  
   return (
     <Controller
       name={name}
-      render={({ field, fieldState: {error}}) => (
+      render={({ field, fieldState: { error } }) => (
         <Form.Item label={label}>
           <Select
             {...field}
@@ -19,7 +22,7 @@ const PHSelect = ({ label, name, options }: PHSelectProps) => {
             options={options}
             size="large"
           />
-          {error && <small style={{color: "red"}}>{error.message}</small>}
+          {error && <small style={{ color: "red" }}>{error.message}</small>}
         </Form.Item>
       )}
     />

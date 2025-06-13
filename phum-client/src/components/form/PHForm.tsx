@@ -18,6 +18,7 @@ type TFormProps = {
 } & TFormConfig;
 
 const PHForm = ({ onSubmit, children, defaultValues, resolver }: TFormProps) => {
+  
   const formConfig: TFormConfig = {};
 
   if (defaultValues) {
@@ -26,7 +27,7 @@ const PHForm = ({ onSubmit, children, defaultValues, resolver }: TFormProps) => 
   if (resolver) {
     formConfig["resolver"] = resolver;
   }
-
+// const methods = useForm({ defaultValues, resolver });
   const methods = useForm(formConfig);
 
   return (
